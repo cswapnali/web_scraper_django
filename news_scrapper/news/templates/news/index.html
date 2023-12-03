@@ -1,0 +1,11 @@
+{% extends 'news/base.html' %}
+{% block title %}News Scrapper{% endblock title %}
+{% block content %}
+    <form method="post" action="{% url 'index' %}">
+        {% csrf_token %}
+        <label for="query">Enter a name to search:</label>
+        <input type="text" name="query" required>
+        <button type="submit">Search</button>
+    </form>
+    
+{% endblock %}
